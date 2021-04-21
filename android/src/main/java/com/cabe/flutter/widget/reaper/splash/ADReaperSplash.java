@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
+import com.cabe.flutter.widget.reaper.R;
 import com.cabe.flutter.widget.reaper.utils.DimenUtils;
 import com.fighter.loader.ReaperAdSDK;
 import com.fighter.loader.adspace.ReaperSplashAdSpace;
@@ -32,6 +33,7 @@ public class ADReaperSplash implements PlatformView, MethodChannel.MethodCallHan
 
     public ADReaperSplash(Context context, BinaryMessenger messenger, int viewID, Object args) {
         containerLayout = new FrameLayout(context);
+        containerLayout.setId(R.id.reaper_container);
         methodChannel = new MethodChannel(messenger, VIEW_TYPE_ID + "#" + viewID);
         methodChannel.setMethodCallHandler(this);
     }
@@ -42,6 +44,8 @@ public class ADReaperSplash implements PlatformView, MethodChannel.MethodCallHan
         if ("request".equals(methodCall.method)) {
             request((Map<String, String>) methodCall.arguments, result);
             result.success(true);
+        } else if("destroy".equals(methodCall.method)) {
+            containerLayout.removeAllViews();
         } else {
             result.notImplemented();
         }
@@ -130,7 +134,7 @@ public class ADReaperSplash implements PlatformView, MethodChannel.MethodCallHan
                     @Override
                     public void onAdInfo(JSONObject adInfo) {
                         Log.i(TAG, "onAdInfo. adInfo: " + adInfo);
-                        methodChannel.invokeMethod("onAdInfo", adInfo);
+                        methodChannel.invokeMethod("onAdInfo", adInfo.toString());
                     }
                 });
             }

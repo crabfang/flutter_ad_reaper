@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reaper.demo"
+        applicationId "com.btc.satoshi"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
