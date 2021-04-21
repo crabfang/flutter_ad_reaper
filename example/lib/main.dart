@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     final physicalHeight = window.physicalSize.height;
     interaction = AdReaperInteraction("1579");
     video = AdReaperRewardVideo("1537");
-    splash = AdReaperSplash("1559", splashHeight: physicalHeight.toInt(), timeout: 10,);
+    splash = AdReaperSplash("1559", splashHeight: physicalHeight.toInt(), timeout: 5000,);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
