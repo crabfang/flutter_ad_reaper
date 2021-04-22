@@ -33,7 +33,7 @@ class _ADPageState extends State<ADPage> {
               Container(
                 width: 360,
                 height: 200,
-                child: AdReaperBanner("2713"),
+                child: AdReaperBanner("2713", adSizePosition: 6,),
               ),
               Row(
                 children: [
