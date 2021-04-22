@@ -15,11 +15,13 @@ class _ADPageState extends State<ADPage> {
     super.initState();
   }
 
+  AdReaperBanner banner;
   AdReaperInteraction interaction;
   AdReaperRewardVideo video;
   AdReaperSplash splash;
   @override
   Widget build(BuildContext context) {
+    banner = AdReaperBanner("2713", adSizePosition: 6,);
     interaction = AdReaperInteraction("2715");
     video = AdReaperRewardVideo("2716");
     return MaterialApp(
@@ -32,8 +34,8 @@ class _ADPageState extends State<ADPage> {
             children: [
               Container(
                 width: 360,
-                height: 200,
-                child: AdReaperBanner("2713", adSizePosition: 6,),
+                height: 60,
+                child: banner,
               ),
               Row(
                 children: [
@@ -47,6 +49,12 @@ class _ADPageState extends State<ADPage> {
                     child: new Text('LoadVideo'),
                     onPressed: () {
                       video.request();
+                    },
+                  ),
+                  new RaisedButton(
+                    child: new Text('RefreshBanner'),
+                    onPressed: () {
+                      banner.request();
                     },
                   ),
                 ],

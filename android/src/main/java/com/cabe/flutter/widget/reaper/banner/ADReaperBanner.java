@@ -201,6 +201,7 @@ public class ADReaperBanner implements PlatformView, MethodChannel.MethodCallHan
             mAdCallback.destroy();
         }
         mAdCallback = null;
+        containerLayout.removeAllViews();
     }
 
     @Override
