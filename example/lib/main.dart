@@ -32,23 +32,16 @@ class _MyAppState extends State<MyApp> {
     });
 
     final physicalWidth = window.physicalSize.width;
-    final physicalHeight = window.physicalSize.height * 0.8;
-    splash = AdReaperSplash("2712", splashHeight: physicalHeight.toInt(), timeout: 5000,);
+    final physicalHeight = window.physicalSize.height * 0.28;
+    splash = AdReaperSplash("2712", splashHeight: physicalHeight.toInt(), timeout: 3000,);
     splash.setChannelHandle(onHandleSplash);
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('ReaperSDKApp'),
-        ),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                width: physicalWidth,
-                height: physicalHeight,
-                child: splash,
-              ),
-            ],
+          child: Container(
+            width: physicalWidth,
+            height: physicalHeight,
+            child: splash,
           ),
         ),
       ),

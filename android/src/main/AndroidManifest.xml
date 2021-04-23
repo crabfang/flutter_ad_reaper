@@ -1,7 +1,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.cabe.flutter.widget.reaper">
-    <application>
+    <!--必要权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--强烈推荐权限-->
+    <!--强烈建议您在AndroidManifest.xml添加以下权限声明，若您的targetSDKVersion >= 23您还需要在运行时进行动态权限申请。
+    注意：SDK不强制校验以下权限（即:无以下权限sdk也可正常工作），但建议您申请以下权限。
+          针对单媒体的用户，允许获取权限的，投放定向广告；
+          不允许获取权限的用户，投放通投广告。
+          媒体可以选择是否把以下权限提供给万汇，并承担相应广告填充和eCPM单价下降损失的结果。-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />    <!-- 可选，如果需要精确定位的话请加上此权限 -->
+
+    <!--可选权限-->
+    <!--下面权限可以优化用户的交互体验，提高eCPM。-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />    <!--注意: 该权限不强制获取，即使没有获取也能正常运行；获取该权限将帮助优化投放广告精准度。-->
+    <application>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/reaper_provider_paths" />
+        </provider>
         <!-- bytedance start -->
         <!-- 如果聚合穿山甲SDK，必须在清单中定义下面组件 -->
         <provider

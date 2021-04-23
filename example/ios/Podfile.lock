@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - widget_ad_reaper (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - widget_ad_reaper (from `.symlinks/plugins/widget_ad_reaper/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  widget_ad_reaper:
+    :path: ".symlinks/plugins/widget_ad_reaper/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  widget_ad_reaper: 66786f7fa63ae50e99949629a8b3ac65c1df91f2
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.8.4
