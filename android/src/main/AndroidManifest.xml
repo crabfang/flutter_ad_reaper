@@ -21,63 +21,54 @@
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />    <!--注意: 该权限不强制获取，即使没有获取也能正常运行；获取该权限将帮助优化投放广告精准度。-->
     <application>
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/reaper_provider_paths" />
-        </provider>
-        <!-- bytedance start -->
-        <!-- 如果聚合穿山甲SDK，必须在清单中定义下面组件 -->
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
-            android:authorities="${applicationId}.TTFileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/tt_provider_paths" />
-        </provider>
-        <provider
-            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
-            android:authorities="${applicationId}.TTMultiProvider"
-            android:exported="false" />
-        <!-- bytedance end -->
+<!--        &lt;!&ndash; bytedance start &ndash;&gt;-->
+<!--        &lt;!&ndash; 如果聚合穿山甲SDK，必须在清单中定义下面组件 &ndash;&gt;-->
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"-->
+<!--            android:authorities="${applicationId}.TTFileProvider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/tt_provider_paths" />-->
+<!--        </provider>-->
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"-->
+<!--            android:authorities="${applicationId}.TTMultiProvider"-->
+<!--            android:exported="false" />-->
+<!--        &lt;!&ndash; bytedance end &ndash;&gt;-->
 
-        <!-- baidu start -->
-        <!-- 如果聚合百度SDK，必须在清单中定义下面组件 -->
-        <activity
-            android:name="com.baidu.mobads.AppActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <provider
-            android:name="com.baidu.mobads.openad.BdFileProvider"
-            android:authorities="${applicationId}.bd.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/bd_file_paths" />
-        </provider>
-        <!-- baidu end -->
+<!--        &lt;!&ndash; baidu start &ndash;&gt;-->
+<!--        &lt;!&ndash; 如果聚合百度SDK，必须在清单中定义下面组件 &ndash;&gt;-->
+<!--        <activity-->
+<!--            android:name="com.baidu.mobads.AppActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation"-->
+<!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+<!--        <provider-->
+<!--            android:name="com.baidu.mobads.openad.BdFileProvider"-->
+<!--            android:authorities="${applicationId}.bd.provider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/bd_file_paths" />-->
+<!--        </provider>-->
+<!--        &lt;!&ndash; baidu end &ndash;&gt;-->
 
-        <!-- gdt start -->
-        <!-- 如果聚合广点通SDK，必须在清单中定义下面组件 -->
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
-        <provider
-            android:name="com.qq.e.comm.GDTFileProvider"
-            android:authorities="${applicationId}.gdt.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/gdt_file_path" />
-        </provider>
-        <!-- gdt end -->
+<!--        &lt;!&ndash; gdt start &ndash;&gt;-->
+<!--        &lt;!&ndash; 如果聚合广点通SDK，必须在清单中定义下面组件 &ndash;&gt;-->
+<!--        <uses-library-->
+<!--            android:name="org.apache.http.legacy"-->
+<!--            android:required="false" />-->
+<!--        <provider-->
+<!--            android:name="com.qq.e.comm.GDTFileProvider"-->
+<!--            android:authorities="${applicationId}.gdt.fileprovider"-->
+<!--            android:exported="false"-->
+<!--            android:grantUriPermissions="true">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+<!--                android:resource="@xml/gdt_file_path" />-->
+<!--        </provider>-->
+<!--        &lt;!&ndash; gdt end &ndash;&gt;-->
     </application>
 </manifest>
