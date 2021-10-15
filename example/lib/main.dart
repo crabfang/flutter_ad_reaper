@@ -27,10 +27,9 @@ class _MyAppState extends State<MyApp> {
   AdReaperSplash splash;
   @override
   Widget build(BuildContext context) {
-    WidgetAdReaper.init("100158", "11a40c7ec1fceeb68d3626a20e41cf9e", ext1: "杭州", ext2: "13767768888", ext3: "vip", ext4: "protect").then((value) => () {
-      print("ad reaper sdk init: $value");
-    });
-    WidgetAdReaper.initBK("100158", "11a40c7ec1fceeb68d3626a20e41cf9e", userId: "1023").then((value) => print("initBK"));
+    WidgetAdReaper.init("100210", "cbd1964efb89c14aac00c09c84866371", ext1: "杭州", ext2: "13767768888", ext3: "vip", ext4: "protect").then((value) => print("ad reaper sdk init: $value"));
+    WidgetAdReaper.initBK("100210", "cbd1964efb89c14aac00c09c84866371", userId: "1023").then((value) => print("initBK"));
+    WidgetAdReaper.setUserInfo("1023");
 
     final physicalWidth = window.physicalSize.width;
     final physicalHeight = window.physicalSize.height * 0.28;
