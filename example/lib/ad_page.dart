@@ -1,7 +1,8 @@
+
 import 'package:flutter/material.dart';
+import 'package:widget_ad_reaper/plugin_ad_reaper.dart';
 import 'package:widget_ad_reaper/widget_ad_reaper_banner.dart';
 import 'package:widget_ad_reaper/widget_ad_reaper_interaction.dart';
-import 'package:widget_ad_reaper/widget_ad_reaper_splash.dart';
 import 'package:widget_ad_reaper/widget_ad_reaper_video_reward.dart';
 
 class ADPage extends StatefulWidget {
@@ -18,7 +19,6 @@ class _ADPageState extends State<ADPage> {
   AdReaperBanner banner;
   AdReaperInteraction interaction;
   AdReaperRewardVideo video;
-  AdReaperSplash splash;
   @override
   Widget build(BuildContext context) {
     banner = AdReaperBanner("2713", adSizePosition: 6,);
@@ -39,22 +39,34 @@ class _ADPageState extends State<ADPage> {
               ),
               Row(
                 children: [
-                  new RaisedButton(
-                    child: new Text('LoadInteraction'),
+                  // new ElevatedButton(
+                  //   child: new Text('LoadInteraction'),
+                  //   onPressed: () {
+                  //     interaction.request();
+                  //   },
+                  // ),
+                  // new ElevatedButton(
+                  //   child: new Text('LoadVideo'),
+                  //   onPressed: () {
+                  //     video.request();
+                  //   },
+                  // ),
+                  // new ElevatedButton(
+                  //   child: new Text('RefreshBanner'),
+                  //   onPressed: () {
+                  //     banner.request();
+                  //   },
+                  // ),
+                  new ElevatedButton(
+                    child: new Text('showSearch'),
                     onPressed: () {
-                      interaction.request();
+                      ReaperBK.bkOption(BKOption.SEARCH);
                     },
                   ),
-                  new RaisedButton(
-                    child: new Text('LoadVideo'),
+                  new ElevatedButton(
+                    child: new Text('showGame'),
                     onPressed: () {
-                      video.request();
-                    },
-                  ),
-                  new RaisedButton(
-                    child: new Text('RefreshBanner'),
-                    onPressed: () {
-                      banner.request();
+                      ReaperBK.bkOption(BKOption.GAME);
                     },
                   ),
                 ],

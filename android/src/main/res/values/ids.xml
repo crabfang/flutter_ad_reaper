@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="reaper_container" type="id" />
+    <item name="reaper_bk_search" type="id" />
+    <item name="reaper_bk_search_container" type="id" />
+    <item name="reaper_bk_game" type="id" />
+    <item name="reaper_bk_game_container" type="id" />
 </resources>

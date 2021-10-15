@@ -38,6 +38,8 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
+        //需要申请头条APPLOG_SCHEME
+        manifestPlaceholders.put("APPLOG_SCHEME", "rangersapplog.deb2acb23f8875c3")
     }
 
     buildTypes {

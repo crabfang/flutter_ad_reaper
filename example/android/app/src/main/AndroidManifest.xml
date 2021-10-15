@@ -12,6 +12,7 @@
         android:label="widget_ad_reaper_example"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:replace="android:label">
         <activity
             android:name=".MainActivity"

@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     WidgetAdReaper.init("100158", "11a40c7ec1fceeb68d3626a20e41cf9e", ext1: "杭州", ext2: "13767768888", ext3: "vip", ext4: "protect").then((value) => () {
       print("ad reaper sdk init: $value");
     });
+    WidgetAdReaper.initBK("100158", "11a40c7ec1fceeb68d3626a20e41cf9e", userId: "1023").then((value) => print("initBK"));
 
     final physicalWidth = window.physicalSize.width;
     final physicalHeight = window.physicalSize.height * 0.28;
